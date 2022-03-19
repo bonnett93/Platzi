@@ -26,12 +26,13 @@ For more details see the Django oficial [tutorial](https://docs.djangoproject.co
 ### Create new Django project with name platzi_awards:
     (venv) django-admin startproject platzi_awards_app
 
-	A Django project is an application set, for example the project Instagram has some applications inside:
-	* Insragram project:
-		* Feed aplication
-		* histories aplication
-		* Reels aplicaion
-		*...
+A Django project is an application set, for example the project Instagram has some applications inside:
+	
+* Insragram project:
+	* Feed aplication
+	* histories aplication
+	* Reels aplicaion
+	*...
 
 	For this project for example we have the aplication pools, and this let us use as a portable module and use in another page like the oficial platzi page and make the pool there.
 
@@ -85,16 +86,19 @@ The ip:port where the project is deploy on 127.0.0.1:8000 (local host) by defaul
 
 ### Create new App named "polls" inside this project
 With the virtual enviroment activate, go to plarzi_awards inner directory and write :
+
 	python3 manage.py startapp polls
 
 now we have new directory named polls:
-	* Modify views.py to include a new view named index:
+* Modify views.py to include a new view named index:
+
 		from django.http import HttpResponse
 
 		def index(request):
 			return HttpResponse("Hello world")
 
-	* Create a new file urls.py inside:
+* Create a new file urls.py inside:
+
 		from django.urls import path
 		from . import views
 
@@ -102,7 +106,8 @@ now we have new directory named polls:
 			path("", views.index, name="index")
 		]
 
-	* Add the ulrs from polls to platzi_awards inner directory urls file.
+* Add the ulrs from polls to platzi_awards inner directory urls file.
+
 		from django.urls import path, include
 
 		urlpatterns = [
@@ -110,4 +115,4 @@ now we have new directory named polls:
 			path("polls/", include("polls.urls"))
 		]
 
-	* Write localhost/polls to see the changes in your browser. If there is an error, stop and run the project again.
+* Write localhost/polls to see the changes in your browser. If there is an error, stop and run the project again.
